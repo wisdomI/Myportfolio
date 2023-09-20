@@ -71,6 +71,11 @@ function themeSelector() {
     cardTextSub.forEach((textSub) => {
       textSub.classList.toggle("dark-theme");
     });
+
+    // Header Background
+    let headBg = document.querySelector(".header");
+    headBg.classList.toggle("black-bg");
+  
 }
  
 

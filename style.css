@@ -71,7 +71,7 @@
     z-index: 1;
 
 
-    background: transparent;
+    background: white;
     backdrop-filter: blur(15px);
 }
 
@@ -846,6 +846,10 @@ input:checked + .slider:before {
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+.black-bg {
+    background-color: #000;
 }
 
 
