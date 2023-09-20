@@ -1,0 +1,963 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;400;700&display=swap');
+
+
+:root {
+    --background-color: #44FF15;
+    --margin: 10px 15px;
+    --body-margin: 0 0;
+    --img-height: 400px;
+    --img-width: 300px;
+    --display: flex;
+    --text-color-light: black;
+    --text-color-dark: white;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar{
+    width: 5px;
+    transition: all .5s;
+}
+
+::-webkit-scrollbar:hover{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-image: 
+        linear-gradient(180deg, #95DBFE, #078605);
+    box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, .5);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #e4e4e4;
+}
+
+/* _________________________________ */
+
+
+
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color-light);
+    scroll-behavior: smooth;
+}
+
+.theme {
+    background: var(--text-color-dark);
+    color: var(--text-color-light);
+}
+
+/* NavBar ____________________________________________________________ */
+
+.header{
+    display: var(--display);
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    padding: 20px 0;
+    align-items: center;
+    box-shadow: 0px 2px 15px var(--background-color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    z-index: 1;
+
+
+    background: transparent;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    width: auto;
+    height: auto;
+}
+
+.menu,
+.close,
+.Logo-dark {
+    display: none;
+}
+
+.display {
+    display: flex;
+}
+
+.dark-theme {
+    color: var(--text-color-dark);
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .2s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    background: none;
+}
+
+.navbar a::after {
+    content: " ";
+    height: 3px;
+    width: 100%;
+    background: var(--background-color);
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    opacity: 0;
+    border-radius: 10px;
+
+    transition: all 0.5s;
+    pointer-events: none;
+}
+
+.navbar a:active::after,
+.navbar a:focus::after {
+    opacity: 1;
+}
+
+.mobile-nav {
+    flex-direction: column;
+}
+
+.mobile-theme-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* KEYFRAMES ANIMATION FOR NAVBAR PAGES */
+@keyframes slideTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* theme selector wrapper _________________________________________*/
+.theme-section {
+    display: flex;
+    gap: 5px;
+
+    align-content: center;
+    justify-content: center;
+}
+
+.dark-icon {
+    width: 20px;
+    height: 20px;
+
+    align-self: center;
+}
+
+.dark-iconlt {
+    width: 20px;
+    height: 20px;
+
+    align-self: center;
+}
+
+.dark-theme {
+    background-color: var(--text-color-light);
+    color: var(--text-color-dark);
+}
+/* ______________________________________________________________ */
+
+
+/* Theme selector ________________________________________________*/
+.theme-section{
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid black;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    border: 1px solid white;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--background-color);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 34px;
+}
+
+/* ____________________________________________________________ */
+
+.home-body {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 80px;
+    margin-top: 100px;
+
+    top: 0;
+
+    border-bottom: 1px solid var(--background-color);
+}
+
+.home-content {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.home-content h3 {
+    font-size: 25px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.home-content h3 span {
+    color: var(--background-color);
+}
+
+.home-content h1 {
+    font-size: 45px;
+    font-weight: 700;
+
+    animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.home-content p {
+    font-size: 1rem;
+    padding-bottom: 20px ;
+    max-width: 100%;
+
+    animation: slideRight 1s ease forwards;
+}
+
+.home-img img {
+    height: auto;
+    max-width: auto;
+
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2s, 3s;
+}
+
+.home-img2 {
+    display: none;
+}
+
+.home-img2 img {
+    height: auto;
+    max-width: auto;
+
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2s, 3s;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-socialmedia {
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--background-color);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: var(--background-color);
+    font-size: 25px;
+    text-decoration: none;
+    margin-bottom: 20px;
+
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+}
+
+.bx {
+    color: #44FF15;
+}
+
+.bx:hover {
+    background: var(--background-color);
+    color: white;
+    box-shadow: 0 0 20px var(--background-color)
+}
+
+.social-media a:hover{
+    background: var(--background-color);
+    color: white;
+    box-shadow: 0 0 20px var(--background-color);
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.download-btn {
+    width: 150px;
+    height: 40px;
+
+    border-radius: 15px;
+    border: none;
+
+    background: var(--background-color);
+    color: var(--text-color-dark);
+
+    font-weight: 700;
+    box-shadow: 0 0 20px var(--background-color);
+
+    transition: .5s ease-in-out;
+
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.download-btn:hover {
+    background: white;
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--background-color)
+}
+
+.btn{
+    text-decoration: none;
+}
+
+
+/* About Section */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    border-bottom: 1px solid var(--background-color);
+}
+
+.text-and-image-subsection {
+    display: flex;
+    margin-top: 50px;
+
+    font-size: 15px;
+    gap: 50px;
+}
+
+.about-text {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+
+.about-text-main {
+    padding: 0 50px 0 0;
+}
+
+
+/* Skills Section */
+
+#skills {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 20px;
+
+    margin-bottom: 50px;
+
+    border-bottom: 1px solid var(--background-color);
+}
+
+.skills-text {
+    display: flex;
+    justify-content:center ;
+    align-self: row;
+
+    margin: 50px 0;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 50px;
+
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    align-items: center;
+    text-align: center;
+
+    box-shadow: 0px 2px 15px var(--background-color);
+    width: 350px;
+    height: fit-content;
+
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.card-wrapper p {
+    font-size: 12px;
+}
+
+.card-text-sub {
+    width: 100%;
+}
+
+.card-images{
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.sub-image-wrapper1, 
+.sub-image-wrapper2 {
+    display: flex;
+    gap: 20px;
+} 
+
+.sub-img img {
+    height: 35px;
+    width: 35px;
+}
+
+.card-btn button {
+    color: var(--text-color-dark);
+    background: var(--background-color);
+    border: none;
+
+    width: 150px;
+    height: 40px;
+
+    border-radius: 15px;
+    padding: 5px;
+}
+
+
+/* MODAL FOR CERTIFICATION CARDS */
+#modal {
+    position: absolute;
+    top: 300%;
+    left: 25%;    
+    transform: translate (-50%, -50%);  
+}
+    
+#modal {    
+    max-width: 600px; 
+    padding: 1.5rem;
+    border:no-button;
+}
+
+#modal::backdrop {
+    background: rgb (0 0 0 / 0.5)
+    
+}
+       
+#modal .modal-btn {
+    padding: 10px 18px; margin-top: 10px;
+}
+
+#modal .modal-btn:first-child {
+    /* Subscribe Button */ 
+    background-color: #00ce79;
+}
+   
+#modal .modal-btn:last-child {
+    
+ /* Close Button */
+    border: 1px solid black; 
+    background-color: #fff;
+    margin-left: 16px
+}
+    
+#modal .modal-btn:last-child:hover {
+    color: white;
+    background-color: #000;
+}
+
+#modal h2 {
+    margin-bottom: 20px;
+}
+
+#modal p {
+    font-weight: 500; 
+    margin-bottom: 10px;
+}
+
+/* Certification Section_____________________________ */
+.certification {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    justify-content: center;
+}
+
+.certification h2 {
+    display: flex;
+    align-self: center;
+}
+
+.cert-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.cert-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    text-align: center;
+
+    gap: 20px;
+
+    justify-content: center;
+    justify-self: center;
+    align-content: center;
+    align-self: center;
+
+    width: 300px;
+
+    background-color: var(--background-color);
+    padding: 20px 0;
+    border-radius: 15px;
+
+    box-shadow: 0px 2px 15px var(--background-color);
+}
+
+.cert-cardtxt {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cert-cardtxt h4,
+.cert-cardtxt h3,
+.cert-cardtxt p {
+    color: white;
+}
+
+.cert-btn {
+    border: none;
+    height: 30px;
+    width: 100px;
+    background: var(--text-color-dark);
+    color: var(--background-color);
+    border-radius: 10px;
+    align-self: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+    height: auto;
+    background: var(--background-color);
+    color: var(--text-color-dark);
+}
+
+.foot-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-self: center;
+
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.foot-container h3,
+.foot-container p,
+.ft-bx {
+    color: var(--text-color-dark);
+}
+
+.ft-bx {
+    border: 1px solid var(--text-color-dark);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+}
+
+.ft-bx:hover {
+    background: var(--text-color-dark);
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--text-color-dark);
+}
+
+.social-media a {
+    margin-bottom: 0;
+}
+
+/* CERTIFICATION POP UP CARD */
+.cert-popup {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
+    height: 90%;
+
+    /* backdrop-filter: blur(8px); */
+
+    position: absolute;
+    top: 5%;
+    left: 0;    
+    transform: translate (-50%, -50%);
+}
+
+.show-cert-popup {
+    display: flex;
+}
+
+.popup-wrapper {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: fit-content;
+    align-self: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px 0;
+    box-shadow: 0px 2px 15px var(--background-color);
+    
+}
+
+.img-holder img {
+    width: 300px;
+    height: 250px;
+}
+
+.skill-set {
+    background-color: var(--background-color);
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    width: 370px;
+}
+
+.skill-set h5 {
+    color: var(--text-color-dark);
+    height: fit-content;
+}
+
+.tech1m img {
+    height: 300px;
+}
+
+.tech1m-wrapper {
+    margin-top: 50px;
+}
+
+.popup-close {
+    width: 70px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width:1024px) {
+    .home-img img {
+        height: 400px;
+        width:400px;
+    }
+
+    .social-media {
+        margin-bottom: 15px;
+    }
+    /* __________________________________ */
+
+    .image-wrapper img {
+        width: 400px;
+        height: 400px;
+    }
+
+    #modal {
+        top: 500%;
+        left: 20%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .home-body, 
+    .text-and-image-subsection {
+        flex-direction: column ;
+    }
+    .home-content, 
+    .about-text-main {
+        text-align: center;
+        padding: 20px 50px;
+        justify-content: center;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .download-btn {
+        align-self: center;
+    }
+
+    .mobile-theme-section {
+        flex-direction: row;
+    }
+
+    .nav-and-theme {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .navbar,
+    .theme-section {
+        display: none;
+    }
+
+    .show-nav{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .mobile-menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu,
+    .close {
+        display: flex;
+        border: none;
+        background: transparent;
+        font-size: 2rem;
+    }
+
+    .close {
+        display: none;
+    }
+
+    .card {
+        width: 250px;
+        height: fit-content;
+    }
+
+    .mobile-theme-section {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .home-img img,
+    .image-wrapper img {
+        width:300px;
+        height:300px;
+    }
+
+    .home-content {
+        text-align: center;
+        padding: 20px 20px;
+        justify-content: center;
+    }
+
+    .home-body,
+    .about-text-main {
+        padding: 0;
+    } 
+}
+
+

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Wisdom Iwunwa</title>
+</head>
+
+<body id="body">
+    <nav class="header">
+        <img src="./Images/Logo-dark.png" alt="logo" class="Logo-dark logo">  
+        <img src="./Images/Logo-light.png" alt="logo" class="Logo-light logo">
+
+        <div class="nav-and-theme">
+            <nav class="navbar">
+                <a href="#home" style="--i:1;" class="nav-item">Home</a>
+                <a href="#about" style="--i:2;" class="nav-item">About</a>
+                <a href="#skills" style="--i:3;" class="nav-item">Skills</a>
+                <a href="#certifications" style="--i:4;" class="nav-item">Certifications</a>
+                <a href="#contact" style="--i:5;" class="nav-item">Contact</a>
+            </nav>
+            <div class="mobile-theme-section">
+                <img src="./Images/light-mode.png" alt="light" class="light-icon">
+                <label class="switch">
+                    <input type="checkbox" onclick="themeSelector()">
+                    <span class="slider round"></span>
+                </label>
+                <img src="./Images/Dark-mode.png" alt="dark" class="dark-icon">
+                <img src="./Images/Dark-mode-lt.png" alt="light" class="dark-iconlt hidden">
+            </div>
+        </div>
+
+        <div class="theme-section">
+            <img src="./Images/light-mode.png" alt="light" class="light-icon">
+            <label class="switch">
+                <input type="checkbox" onclick="themeSelector()">
+                <span class="slider round"></span>
+            </label>
+            <img src="./Images/Dark-mode.png" alt="dark" class="dark-icon">
+            <img src="./Images/Dark-mode-lt.png" alt="light" class="dark-iconlt hidden">
+        </div>
+
+        <button class="menu" onclick="menuOpen()">
+            <i class='bx bx-menu'></i>
+        </button>
+        <button class="close" onclick="menuClose()">
+            <i class='bx bx-x'></i>
+        </button>
+    </nav>   
+
+    <section class="home-body" id="home">
+        <div class="home-content">
+            <h3 class="home-content-text">
+                Hello, I'm
+            </h3>
+            <h1 class="home-content-text">
+                Wisdom Iwunwa
+            </h1>
+            <h3 class="home-content-text">
+                And I'm a <span class="multiple-texts"></span>
+            </h3>
+            <p class="home-content-text home-main-txt" >
+                Wisdom Iwunwa is a proficient web developer(and more 😉) that designs,
+                and is most concerned with and about meeting needs of clients,
+                organizations, and whoever requires his services by providing lasting
+                and industry’s standard solutions to tech problems - yes, tech because he
+                wears other hats that enable his proficiency in the industry.
+            </p>
+            <div class="social-media hero-socialmedia">
+                <a href="https://web.facebook.com/bigblackjazz/" target="_blank" style="--i:6;"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://twitter.com/udo_preach/" target="_blank" style="--i:7;"><i class='bx bxl-twitter' ></i></a>
+                <a href="https://www.linkedin.com/in/wisdom-iwunwa-6027a5209/" target="_blank" style="--i:8;"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/wisdomI/" target="_blank" style="--i:9;"><i class='bx bxl-github' ></i></a>
+            </div>
+
+            <button class="download-btn">
+                Download CV
+            </button>
+        </div>
+
+        <div class="home-img">
+            <img src="./images/hero-img-light.png" alt="">
+        </div>
+
+        <div class="home-img2">
+            <img src="./images/hero-img-dark.png" alt="">
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-header-text">
+            <h2 class="about-header-texti">
+                About
+            </h2>
+        </div>
+
+        <div class="text-and-image-subsection" id="about">
+            <div class="image-wrapper">
+                <img src="./Images/img-2-light.png" alt="about-img">
+            </div>
+
+            <p class="about-text-main">
+                My Journey into tech was as a result of curiosity. Endless waves of questions 
+                always popped(still pops) into my mind, questions that led to more confusion as 
+                to how these tech things are done. Personally, I believe proficiency is birthed from
+                and in the place of deep confusion on and about a matter because when clarity 
+                finally comes; all the roads not to take are already known. And the beautiful
+                thing about all these is that even things that were not set out to be learnt become 
+                discovered - this is basically my tech story.
+                <br>
+                I ventured into web development as a teenager, and after a one week period I dumped 
+                it, maybe because I was trying to memorize all the HTML tags I came across; sad. Time 
+                went on and I realized that I had thrown a gem away and that’s when I picked it back up,
+                but this time, as a ui/ux designer and decided that it will be one of the tools I will use to 
+                dig the earth in search of wealth along-side making global impact, touching lives and
+                providing solutions.
+                <br>
+                Wow! You already know me. One more thing; I’m really good at this thing I do. Kindly <br>
+                check out my works and do not hesitate to hire me. <br>
+                <br>
+                Cheers! 
+            </p>
+        </div>
+
+    </section>
+
+    <section id="skills">
+        <div class="skills-text">
+            <h2 class="card-text-head">
+                Skills
+            </h2>
+        </div>
+
+        <div class="card-wrapper">
+           
+        </div>
+    </section>
+
+    <section  id="certifications" class="certification">
+        <h2 class="main-cert-head">
+            Certifications
+        </h2>
+        <div class="cert-wrapper">
+
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="foot-container">
+            <h3>
+                Hire Me!
+            </h3>
+            <p>
+                Reach me
+            </p>
+            <div class="social-media">
+                <a href="https://web.facebook.com/bigblackjazz/" target="_blank" style="--i:6;"><i class='bx ft-bx bxl-facebook-circle'></i></a>
+                <a href="https://twitter.com/udo_preach/" target="_blank" style="--i:7;"><i class='bx ft-bx bxl-twitter' ></i></a>
+                <a href="https://www.linkedin.com/in/wisdom-iwunwa-6027a5209/" target="_blank" style="--i:8;"><i class='bx ft-bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/wisdomI/" target="_blank" style="--i:9;"><i class='bx ft-bx bxl-github' ></i></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" style="--i:10;"><i class='bx ft-bx bxl-gmail' ></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"> </script>
+    <script src="./app.js"></script>
+</body>
+</html>
